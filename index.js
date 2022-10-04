@@ -1,19 +1,21 @@
-let a = 20;
-let b = 0;
+console.log('Satring');
 
-let waitData = new Promise((res, rej) => {
-    console.log('Calling waitData');
-  setTimeout(() => {
-    console.log("Calling setTimeout");
-    res(30);
-  }, 1000);
-});
+setTimeout(() => {
+    console.log('1s log');
+}, 1000);
 
-waitData
-  .then((result) => {
-    console.log(a + result);
-  })
-  .catch((err) => {
-    console.log("something went wrong");
-  });
-console.log(`Afer exucuting ${a}`);
+setTimeout(() => {
+    console.log('0s log');
+}, 0);
+
+console.log('Finishing');
+
+
+// OutPut 
+                    /*
+                    Satring
+                    Finishing
+                    0s log
+                    1s log
+                    */
+
