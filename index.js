@@ -1,11 +1,9 @@
-const fs = require("fs");
+const fs = require('fs');
+const path = require('path');
 
-const input = process.argv;
+const dirPath = path.join(__dirname, 'files');
 
-if (input[2] == "add") {
-  fs.writeFileSync(input[3], input[4]);
-} else if (input[2] == "remove") {
-  fs.unlinkSync(input[3]);
-} else {
-  console.log("Invalid inputs");
+for(let i = 0; i < 5; i++){
+    fs.writeFileSync(dirPath + "/hello"+i+".txt", 'A simple text file')
 }
+
